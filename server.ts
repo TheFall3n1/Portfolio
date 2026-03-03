@@ -11,8 +11,15 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  app.use(cors());
+  app.use(cors({
+    origin: [
+      "https://cv1108.vercel.app"
+    ],
+    credentials: true
+  }));
   app.use(express.json());
+
+
 
   // Database Initialization
   const MONGODB_URI = process.env.MONGODB_URI;
