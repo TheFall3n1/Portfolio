@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-light: #F8FAFC;
+  --color-ink-light: #0F172A;
+  --color-muted-light: #475569;
+  --color-border-light: #E2E8F0;
+  --color-accent-blue: #2563EB;
+  --color-accent-indigo: #4F46E5;
+  --color-accent-orange: #F97316;
+
+  --color-bg-geek: #0B1120;
+  --color-card-geek: #111827;
+  --color-ink-geek: #F3F4F6;
+  --color-muted-geek: #9CA3AF;
+  --color-accent-crimson: #DC2626;
+  --color-accent-electric: #6366F1;
+  --color-accent-gold: #F59E0B;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased transition-colors duration-500;
+  }
+}
+
+.geek-mode {
+  --color-background: var(--color-bg-geek);
+  --color-foreground: var(--color-ink-geek);
+}
+
+.light-mode {
+  --color-background: var(--color-bg-light);
+  --color-foreground: var(--color-ink-light);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
